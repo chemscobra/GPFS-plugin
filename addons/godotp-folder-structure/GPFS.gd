@@ -14,28 +14,48 @@ var root = null
 func _ready():
 	root = folder_tree.create_item()
 	root.set_text(0,"root")
+	print(typeof(root.get_children()))
+	print(folder_tree.get_selected())
 	
 	add_folder.connect("button_down",self,"_on_add_folder_down")
 	del_folder.connect("button_down",self,"_on_del_folder_down")
 	create_struc.connect("button_down",self,"_on_create_struc_down")
 
+func _input(event):
+	if event is InputEventKey and Input.is_key_pressed(KEY_DELETE):
+		 _on_del_folder_down()
+		
+	
 #Button Functions
-
 func _on_add_folder_down():
-	if folder_ntxt.text != "" and sel_item == null:
-		var newfolder = folder_tree.create_item()
+	var newfolder = null
+	if folder_ntxt.text != "" and folder_tree.get_selected() == null:
+		newfolder = folder_tree.create_item(folder_tree.get_root())
+		if newfolder.get_prev() != null and newfolder.get_prev().get_text(0) == folder_ntxt.text:
+			newfolder.set_text(0,folder_ntxt.text +str(1))
+			newfolder.set_selectable(0,true)
+		else:
+			newfolder.set_text(0,folder_ntxt.text)
+			newfolder.set_selectable(0,true)
+		print("Added Item")
+		
+	elif folder_ntxt.text != "" and folder_tree.get_selected() != null:
+		newfolder = folder_tree.create_item(folder_tree.get_selected())
 		newfolder.set_text(0,folder_ntxt.text)
 		newfolder.set_selectable(0,true)
 	else:
-		var newfolder = folder_tree.create_item(sel_item)
-		newfolder.set_text(0,folder_ntxt.text)
-		newfolder.set_selectable(0,true)
-	pass
+		pass
+		
+	print(typeof(newfolder))
 	
 func _on_del_folder_down():
-	if sel_item != null and root.:
-		root.remove_child(sel_item)
-
+	var selitem_parent = null
+	if folder_tree.get_selected() != null:
+		selitem_parent = folder_tree.get_selected().get_parent()
+		selitem_parent.remove_child(folder_tree.get_selected())
+		sel_item = null
+		selitem_parent.select(0)
+		
 func _on_create_struc_down():
 	pass
 
