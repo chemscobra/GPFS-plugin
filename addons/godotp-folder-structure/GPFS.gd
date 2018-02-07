@@ -72,9 +72,8 @@ func _on_del_folder_down():
 		
 func _on_create_struc_down():
 	var root = folder_tree.get_root()
-	
-	if root != null and root.get_children != null:
-		pass
+	print(typeof(get_names(root)))
+	print(str(get_names(root)))
 
 func _on_FolderTree_item_selected():
 	sel_item = folder_tree.get_selected()
@@ -113,11 +112,8 @@ func get_names(treeitem):
 		var child = treeitem.get_children()
 		while child != null:
 			if not dict.has(child.get_text(0)):
-				dict[child.get_text(0)]
+				dict[child.get_text(0)] = get_names(child)
 			# put code here
-			if child.get_text(0) == foldername:
-				return true
-			else:
-				child = child.get_next()
-	return false
+			child = child.get_next()
+	return dict
 	
