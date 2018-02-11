@@ -1,13 +1,24 @@
 tool
 extends Panel
 
+export(Texture) var folder_icon
+
 #Controls
-onready var folder_tree = $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/FolderTree
-onready var folder_ntxt = $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/Controls/MarginContainer/VBoxContainer/HBoxContainer/FolderName
+onready var folder_tree = $MarginContainer/PanelContainer/HBoxContainer/FolderTree
+onready var folder_ntxt = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/FolderName
+onready var git_text = $DialogGit/MarginContainer/GItextedit
+onready var readme_text = $DialogReadme/MarginContainer/Readtextedit
+
 #Buttons
-onready var add_folder= $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/Controls/MarginContainer/VBoxContainer/HBoxContainer/AddFolder
-onready var del_folder= $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/Controls/MarginContainer/VBoxContainer/HBoxContainer/DelFolder
-onready var create_struc = $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/Controls/MarginContainer/VBoxContainer/Create
+onready var add_folder= $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/AddFolder
+onready var del_folder= $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/DelFolder
+onready var clear_tree = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/ClearTree
+onready var create_struc = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/Create
+onready var edit_git = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/EditGitBtn
+onready var edit_readme = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/EditReadBtn
+onready var add_git = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/Addgit
+onready var add_readme =$MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/Addreadme
+
 
 var sel_item = null
 var root = null
@@ -16,13 +27,15 @@ func _ready():
 	self.set_focus_mode(Control.FOCUS_ALL)
 	root = folder_tree.create_item()
 	root.set_text(0,"root")
-	print(root.get_children())
-	print(folder_tree.get_selected())
+	#print(root.get_children())
+	#print(folder_tree.get_selected())
 	
 	add_folder.connect("button_down",self,"_on_add_folder_down")
 	del_folder.connect("button_down",self,"_on_del_folder_down")
 	create_struc.connect("button_down",self,"_on_create_struc_down")
-
+	edit_git.connect("button_down",self,"_on_editgit_button_down")
+	edit_readme.connect("button_down",self,"_on_editreadme_button_down")
+	clear_tree.connect("button_down",self,"_on_cleartree_button_down")
 func _input(event):
 	if event is InputEventKey and Input.is_key_pressed(KEY_DELETE):
 		 _on_del_folder_down()
@@ -59,8 +72,9 @@ func _on_add_folder_down():
 	else:
 		return
 	newfolder.set_selectable(0,true)
-	newfolder.set_disable_folding(true)
+	newfolder.set_disable_folding(false)
 	newfolder.set_editable(0,true)
+	newfolder.set_icon(0,folder_icon)
 	
 func _on_del_folder_down():
 	var selitem_parent = null
@@ -75,6 +89,19 @@ func _on_create_struc_down():
 	dir.open('res://')
 	var dir_dic = get_names(folder_tree.get_root())
 	create_direc(dir_dic, dir)
+	
+	if add_git.is_pressed():
+		var gitfile = File.new()
+		gitfile.open('res//.gitignore',gitfile.WRITE)
+		gitfile.store_string(git_text.text)
+		gitfile.close()
+	
+	if add_readme.is_pressed():
+		var readmefile = File.new()
+		readmefile.open('res://README.md',readmefile.WRITE)
+		readmefile.store_string(readme_text.text)
+		readmefile.close()
+
 	
 func _on_FolderTree_item_selected():
 	sel_item = folder_tree.get_selected()
@@ -130,4 +157,17 @@ func create_direc(dir_dict, dir):
 	else:
 		return
 	
+func _on_editgit_button_down():
+	$DialogGit.set_exclusive(true)
+	$DialogGit.popup_centered()
+
+
+func _on_editreadme_button_down():
+	$DialogReadme.set_exclusive(true)
+	$DialogReadme.popup_centered()
 	
+func _on_cleartree_button_down():
+	folder_tree.clear()
+	root = folder_tree.create_item()
+	root.set_text(0,"root")
+
