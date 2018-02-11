@@ -3,11 +3,11 @@ extends Panel
 
 #Controls
 onready var folder_tree = $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/FolderTree
-onready var folder_ntxt = $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/FolderName
+onready var folder_ntxt = $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/Controls/MarginContainer/VBoxContainer/HBoxContainer/FolderName
 #Buttons
-onready var add_folder= $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/AddFolder
-onready var del_folder= $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/DelFolder
-onready var create_struc = $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/Create
+onready var add_folder= $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/Controls/MarginContainer/VBoxContainer/HBoxContainer/AddFolder
+onready var del_folder= $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/Controls/MarginContainer/VBoxContainer/HBoxContainer/DelFolder
+onready var create_struc = $MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/Controls/MarginContainer/VBoxContainer/Create
 
 var sel_item = null
 var root = null
@@ -71,10 +71,11 @@ func _on_del_folder_down():
 		selitem_parent.select(0)
 		
 func _on_create_struc_down():
-	var root = folder_tree.get_root()
-	print(typeof(get_names(root)))
-	print(str(get_names(root)))
-
+	var dir = Directory.new()
+	dir.open('res://')
+	var dir_dic = get_names(folder_tree.get_root())
+	create_direc(dir_dic, dir)
+	
 func _on_FolderTree_item_selected():
 	sel_item = folder_tree.get_selected()
 	print(sel_item.get_text(0))
@@ -111,9 +112,22 @@ func get_names(treeitem):
 	if treeitem != null:
 		var child = treeitem.get_children()
 		while child != null:
-			if not dict.has(child.get_text(0)):
-				dict[child.get_text(0)] = get_names(child)
+			dict[child.get_text(0)] = get_names(child)
 			# put code here
 			child = child.get_next()
 	return dict
+
+func create_direc(dir_dict, dir):
+	var strdir = dir.get_current_dir()
+	if !dir_dict.empty():
+		for key in dir_dict.keys():
+			if !dir.dir_exists(key): dir.make_dir(key)
+			
+			if !dir_dict[key].empty():
+				dir.change_dir(key)
+				create_direc(dir_dict[key],dir)
+			dir.change_dir(strdir)
+	else:
+		return
+	
 	
