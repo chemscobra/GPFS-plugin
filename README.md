@@ -5,10 +5,10 @@
 > A Godot addons to Create the folder structure for your projects.
 
 ## Screenshots
-![alt text](https://www.dropbox.com/s/h63pr8unl6z8c6r/Selection_002.png )
-![alt text](https://www.dropbox.com/s/hkt0t2jk3nmox4q/Selection_003.png )
-![alt text](https://www.dropbox.com/s/3hhtosmbduadguf/Selection_004.png )
-![alt text](https://www.dropbox.com/s/fmeos0byvkj6jqs/Selection_005.png )
+![Screenshot 1](https://i.imgur.com/HhA0Sq4.png )
+![Screenshot 2](https://i.imgur.com/owmSFpw.png )
+![Screenshot 3](https://i.imgur.com/n4RksoW.png)
+![Screenshot 4](https://i.imgur.com/15GNxQK.png)
 
 
 ## Installation
