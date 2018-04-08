@@ -8,6 +8,7 @@ onready var folder_tree = $MarginContainer/PanelContainer/HBoxContainer/FolderTr
 onready var folder_ntxt = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/FolderName
 onready var git_text = $DialogGit/MarginContainer/GItextedit
 onready var readme_text = $DialogReadme/MarginContainer/Readtextedit
+onready var license_text = $DialogLicense/MarginContainer/Lictextedittextedit
 
 #Buttons
 onready var add_folder= $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/AddFolder
@@ -18,7 +19,7 @@ onready var edit_git = $MarginContainer/PanelContainer/HBoxContainer/Controls/VB
 onready var edit_readme = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/EditReadBtn
 onready var add_git = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/Addgit
 onready var add_readme =$MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/Addreadme
-
+onready var add_license= $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/Addlicense
 
 var sel_item = null
 var root = null
@@ -101,6 +102,14 @@ func _on_create_struc_down():
 		readmefile.open('res://README.md',readmefile.WRITE)
 		readmefile.store_string(readme_text.text)
 		readmefile.close()
+		
+	if add_license.is_pressed():
+		var licensefile = File.new()
+		licensefile.open('res://LICENSE',licensefile.WRITE)
+		licensefile.store_string(license_text.text)
+		licensefile.close()
+		
+	EditorFileSystem.scan()
 
 	
 func _on_FolderTree_item_selected():
@@ -166,8 +175,15 @@ func _on_editreadme_button_down():
 	$DialogReadme.set_exclusive(true)
 	$DialogReadme.popup_centered()
 	
+func _on_Editlicense_button_down():
+	$DialogLicense.set_exclusive(true)
+	$DialogLicense.popup_centered()
+	
 func _on_cleartree_button_down():
 	folder_tree.clear()
 	root = folder_tree.create_item()
 	root.set_text(0,"root")
+
+
+
 
