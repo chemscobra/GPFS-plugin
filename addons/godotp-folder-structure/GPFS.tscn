@@ -130,6 +130,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 10.0
+margin_right = -50.0
+margin_bottom = -10.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -138,21 +142,21 @@ size_flags_horizontal = 5
 size_flags_vertical = 1
 custom_constants/separation = 15
 alignment = 0
-_sections_unfolded = [ "Rect", "Size Flags", "custom_constants" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags", "custom_constants" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 1.0
+anchor_right = 0.0
 anchor_bottom = 0.0
+margin_right = 566.0
 margin_bottom = 24.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 6
+size_flags_horizontal = 7
 size_flags_vertical = 1
 alignment = 1
 _sections_unfolded = [ "Size Flags" ]
@@ -163,8 +167,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 124.0
-margin_right = 274.0
+margin_right = 298.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 150, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -172,7 +175,7 @@ rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 1
-size_flags_horizontal = 5
+size_flags_horizontal = 7
 size_flags_vertical = 1
 focus_mode = 2
 context_menu_enabled = true
@@ -180,7 +183,7 @@ placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "Size Flags" ]
 
 [node name="AddFolder" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer" index="1"]
 
@@ -188,8 +191,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 278.0
-margin_right = 359.0
+margin_left = 302.0
+margin_right = 383.0
 margin_bottom = 24.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -214,8 +217,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 363.0
-margin_right = 462.0
+margin_left = 387.0
+margin_right = 486.0
 margin_bottom = 24.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -240,8 +243,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 466.0
-margin_right = 542.0
+margin_left = 490.0
+margin_right = 566.0
 margin_bottom = 24.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -266,9 +269,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 265.0
+margin_left = 215.0
 margin_top = 39.0
-margin_right = 400.0
+margin_right = 350.0
 margin_bottom = 245.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -406,7 +409,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="Editlicense" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2" index="5"]
+[node name="EditlicenseBtn" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -438,7 +441,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 260.0
-margin_right = 666.0
+margin_right = 566.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -454,7 +457,7 @@ group = null
 text = "Create Structure"
 flat = false
 align = 1
-_sections_unfolded = [ "Size Flags" ]
+_sections_unfolded = [ "Anchor", "Margin", "Size Flags" ]
 
 [node name="AlertFolderName" type="AcceptDialog" parent="." index="1"]
 
@@ -743,7 +746,5 @@ caret_moving_by_right_click = true
 [connection signal="item_selected" from="MarginContainer/PanelContainer/HBoxContainer/FolderTree" to="." method="_on_FolderTree_item_selected"]
 
 [connection signal="nothing_selected" from="MarginContainer/PanelContainer/HBoxContainer/FolderTree" to="." method="_on_FolderTree_nothing_selected"]
-
-[connection signal="button_down" from="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/Editlicense" to="." method="_on_Editlicense_button_down"]
 
 

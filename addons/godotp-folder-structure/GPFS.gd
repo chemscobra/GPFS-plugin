@@ -8,7 +8,7 @@ onready var folder_tree = $MarginContainer/PanelContainer/HBoxContainer/FolderTr
 onready var folder_ntxt = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/FolderName
 onready var git_text = $DialogGit/MarginContainer/GItextedit
 onready var readme_text = $DialogReadme/MarginContainer/Readtextedit
-onready var license_text = $DialogLicense/MarginContainer/Lictextedittextedit
+onready var license_text = $DialogLicense/MarginContainer/Lictextedit
 
 #Buttons
 onready var add_folder= $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/AddFolder
@@ -17,6 +17,7 @@ onready var clear_tree = $MarginContainer/PanelContainer/HBoxContainer/Controls/
 onready var create_struc = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/Create
 onready var edit_git = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/EditGitBtn
 onready var edit_readme = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/EditReadBtn
+onready var edit_license = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/EditlicenseBtn
 onready var add_git = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/Addgit
 onready var add_readme =$MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/Addreadme
 onready var add_license= $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/Addlicense
@@ -36,6 +37,7 @@ func _ready():
 	create_struc.connect("button_down",self,"_on_create_struc_down")
 	edit_git.connect("button_down",self,"_on_editgit_button_down")
 	edit_readme.connect("button_down",self,"_on_editreadme_button_down")
+	edit_license.connect("button_down",self,"_on_editlicense_button_down")
 	clear_tree.connect("button_down",self,"_on_cleartree_button_down")
 func _input(event):
 	if event is InputEventKey and Input.is_key_pressed(KEY_DELETE):
@@ -109,8 +111,8 @@ func _on_create_struc_down():
 		licensefile.store_string(license_text.text)
 		licensefile.close()
 		
-	EditorFileSystem.scan()
-
+		
+	
 	
 func _on_FolderTree_item_selected():
 	sel_item = folder_tree.get_selected()
@@ -175,7 +177,7 @@ func _on_editreadme_button_down():
 	$DialogReadme.set_exclusive(true)
 	$DialogReadme.popup_centered()
 	
-func _on_Editlicense_button_down():
+func _on_editlicense_button_down():
 	$DialogLicense.set_exclusive(true)
 	$DialogLicense.popup_centered()
 	
