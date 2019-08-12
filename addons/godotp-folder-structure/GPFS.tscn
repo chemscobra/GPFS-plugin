@@ -1,13 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/godotp-folder-structure/GPFS.gd" type="Script" id=1]
-[ext_resource path="res://addons/godotp-folder-structure/icon_folder.svg" type="Texture" id=2]
-[ext_resource path="res://addons/godotp-folder-structure/file_type_git2.svg" type="Texture" id=3]
-[ext_resource path="res://addons/godotp-folder-structure/file_type_markdown.svg" type="Texture" id=4]
-[ext_resource path="res://addons/godotp-folder-structure/file_type_license.svg" type="Texture" id=5]
+[ext_resource path="res://addons/godotp-folder-structure/file_type_git2.svg" type="Texture" id=2]
+[ext_resource path="res://addons/godotp-folder-structure/file_type_markdown.svg" type="Texture" id=3]
+[ext_resource path="res://addons/godotp-folder-structure/file_type_license.svg" type="Texture" id=4]
 
-[node name="GPFS" type="Panel" index="0"]
-
+[node name="GPFS" type="AcceptDialog"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -16,543 +14,250 @@ margin_left = -512.0
 margin_top = -600.0
 margin_right = 512.0
 rect_min_size = Vector2( 0, 200 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+window_title = "Create Folder Structure"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Rect", "Size Flags", "Theme", "custom_styles" ]
-folder_icon = ExtResource( 2 )
 
-[node name="MarginContainer" type="MarginContainer" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -36.0
 custom_constants/margin_right = 20
 custom_constants/margin_top = 20
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 20
-_sections_unfolded = [ "custom_constants" ]
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 1004.0
-margin_bottom = 580.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
+margin_right = 988.0
+margin_bottom = 536.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-_sections_unfolded = [ "Size Flags" ]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 977.0
-margin_bottom = 553.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+margin_right = 961.0
+margin_bottom = 509.0
 alignment = 1
 
-[node name="FolderTree" type="Tree" parent="MarginContainer/PanelContainer/HBoxContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="FolderTree" type="Tree" parent="MarginContainer/PanelContainer/HBoxContainer"]
 margin_right = 300.0
-margin_bottom = 546.0
+margin_bottom = 502.0
 rect_min_size = Vector2( 300, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 5
 size_flags_vertical = 3
 custom_constants/vseparation = 6
-columns = 1
-allow_reselect = false
-allow_rmb_select = false
-hide_folding = false
 hide_root = true
-drop_mode_flags = 0
-select_mode = 0
-_sections_unfolded = [ "Columns", "Rect", "Size Flags", "custom_constants" ]
 
-[node name="Controls" type="Panel" parent="MarginContainer/PanelContainer/HBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Controls" type="Panel" parent="MarginContainer/PanelContainer/HBoxContainer"]
 margin_left = 304.0
-margin_right = 970.0
-margin_bottom = 546.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
+margin_right = 954.0
+margin_bottom = 502.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-_sections_unfolded = [ "Size Flags" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer/Controls" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer/Controls"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 50.0
 margin_top = 10.0
 margin_right = -50.0
 margin_bottom = -10.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 5
-size_flags_vertical = 1
 custom_constants/separation = 15
-alignment = 0
-_sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags", "custom_constants" ]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 566.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer"]
+editor/display_folded = true
+margin_right = 550.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 7
-size_flags_vertical = 1
 alignment = 1
-_sections_unfolded = [ "Size Flags" ]
 
-[node name="FolderName" type="LineEdit" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 298.0
+[node name="FolderName" type="LineEdit" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer"]
+margin_right = 282.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 150, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
 size_flags_horizontal = 7
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
-_sections_unfolded = [ "Rect", "Size Flags" ]
+caret_blink = true
+caret_blink_speed = 0.5
 
-[node name="AddFolder" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 302.0
-margin_right = 383.0
+[node name="AddFolder" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer"]
+margin_left = 286.0
+margin_right = 367.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 5
-size_flags_vertical = 1
 custom_colors/font_color = Color( 0.0828857, 0.757812, 0.314892, 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Add Folder"
-flat = false
-align = 1
-_sections_unfolded = [ "custom_colors" ]
 
-[node name="DelFolder" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 387.0
-margin_right = 486.0
+[node name="DelFolder" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer"]
+margin_left = 371.0
+margin_right = 470.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 5
-size_flags_vertical = 1
 custom_colors/font_color = Color( 0.949219, 0.196344, 0.096405, 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Delete Folder"
-flat = false
-align = 1
-_sections_unfolded = [ "custom_colors" ]
 
-[node name="ClearTree" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 490.0
-margin_right = 566.0
+[node name="ClearTree" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer"]
+margin_left = 474.0
+margin_right = 550.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_colors/font_color = Color( 0.501266, 0.704082, 0.964844, 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Clear Tree"
-flat = false
-align = 1
-_sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
 
-[node name="HBoxContainer2" type="GridContainer" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 215.0
+[node name="HBoxContainer2" type="GridContainer" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer"]
+margin_left = 207.0
 margin_top = 39.0
-margin_right = 350.0
+margin_right = 342.0
 margin_bottom = 245.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 6
-size_flags_vertical = 1
-columns = 1
-_sections_unfolded = [ "Rect", "Size Flags" ]
 
-[node name="Addgit" type="CheckBox" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Addgit" type="CheckBox" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2"]
 margin_left = 11.0
 margin_right = 124.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Add gitignore"
-flat = false
-align = 0
-_sections_unfolded = [ "Rect", "Size Flags" ]
 
-[node name="EditGitBtn" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="EditGitBtn" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2"]
 margin_top = 28.0
 margin_right = 135.0
 margin_bottom = 66.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 5
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Edit .gitignore"
-icon = ExtResource( 3 )
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags", "custom_styles" ]
+icon = ExtResource( 2 )
 
-[node name="Addreadme" type="CheckBox" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Addreadme" type="CheckBox" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2"]
 margin_top = 70.0
 margin_right = 135.0
 margin_bottom = 94.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Add README.md"
-flat = false
-align = 0
-_sections_unfolded = [ "Size Flags" ]
 
-[node name="EditReadBtn" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="EditReadBtn" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2"]
 margin_top = 98.0
 margin_right = 135.0
 margin_bottom = 136.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 5
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Edit Readme"
-icon = ExtResource( 4 )
-flat = false
-align = 1
+icon = ExtResource( 3 )
 
-[node name="Addlicense" type="CheckBox" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Addlicense" type="CheckBox" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2"]
 margin_left = 13.0
 margin_top = 140.0
 margin_right = 121.0
 margin_bottom = 164.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Add LICENSE"
-flat = false
-align = 0
-_sections_unfolded = [ "Size Flags" ]
 
-[node name="EditlicenseBtn" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="EditlicenseBtn" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2"]
 margin_top = 168.0
 margin_right = 135.0
 margin_bottom = 206.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 5
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Edit License"
-icon = ExtResource( 5 )
-flat = false
-align = 1
+icon = ExtResource( 4 )
 
-[node name="Create" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Create" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer"]
 margin_top = 260.0
-margin_right = 566.0
+margin_right = 550.0
 margin_bottom = 280.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 5
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Create Structure"
-flat = false
-align = 1
-_sections_unfolded = [ "Anchor", "Margin", "Size Flags" ]
 
-[node name="AlertFolderName" type="AcceptDialog" parent="." index="1"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 396.0
-margin_top = 214.0
-margin_right = 552.0
-margin_bottom = 288.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
-window_title = "Alert!"
-resizable = false
+[node name="AlertFolderName" type="AcceptDialog" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 1016.0
+margin_bottom = 564.0
 dialog_text = "Folder Already Exists"
-dialog_hide_on_ok = true
-_sections_unfolded = [ "Dialog", "Popup" ]
 
-[node name="DialogGit" type="WindowDialog" parent="." index="2"]
-
+[node name="DialogGit" type="WindowDialog" parent="."]
 editor/display_folded = true
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 162.0
-margin_top = 70.0
-margin_right = 618.0
-margin_bottom = 356.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 1016.0
+margin_bottom = 564.0
 window_title = "Edit .gitignore"
-resizable = false
-_sections_unfolded = [ "Popup" ]
 
-[node name="MarginContainer" type="MarginContainer" parent="DialogGit" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="MarginContainer" type="MarginContainer" parent="DialogGit"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="GItextedit" type="TextEdit" parent="DialogGit/MarginContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 436.0
-margin_bottom = 266.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
+[node name="GItextedit" type="TextEdit" parent="DialogGit/MarginContainer"]
+margin_right = 988.0
+margin_bottom = 536.0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-text = "# Godot-specific ignores
-*.import/
+text = "# Created by https://www.gitignore.io/api/godot,linux,macos,windows
+# Edit at https://www.gitignore.io/?templates=godot,linux,macos,windows
+
+### Godot ###
+
+# Godot-specific ignores
+.import/
 export.cfg
 export_presets.cfg
 
 # Mono-specific ignores
 .mono/
 
-# System/tool-specific ignores
-**.directory
+### Linux ###
 *~
-#### Windows thumbnail cache files
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \\r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Windows ###
+# Windows thumbnail cache files
 Thumbs.db
+Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
 
@@ -565,186 +270,64 @@ ehthumbs_vista.db
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-##### MacOS
-# General
-.DS_Store
-.AppleDouble
-.LSOverride
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
 
-# Icon must end with two \\r
-Icon
+# Windows shortcuts
+*.lnk
 
-# Thumbnails
-._*"
-readonly = false
-highlight_current_line = false
-syntax_highlighting = false
-show_line_numbers = false
-highlight_all_occurrences = false
-override_selected_font_color = false
-context_menu_enabled = true
-smooth_scrolling = false
-v_scroll_speed = 80.0
-hiding_enabled = 0
-wrap_lines = false
-caret_block_mode = false
-caret_blink = false
-caret_blink_speed = 0.65
-caret_moving_by_right_click = true
+# End of https://www.gitignore.io/api/godot,linux,macos,windows"
 
-[node name="DialogReadme" type="WindowDialog" parent="." index="3"]
-
+[node name="DialogReadme" type="WindowDialog" parent="."]
 editor/display_folded = true
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 162.0
-margin_top = 70.0
-margin_right = 618.0
-margin_bottom = 356.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 1016.0
+margin_bottom = 564.0
 window_title = "Edit README.md"
-resizable = false
-_sections_unfolded = [ "Popup" ]
 
-[node name="MarginContainer" type="MarginContainer" parent="DialogReadme" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="MarginContainer" type="MarginContainer" parent="DialogReadme"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Readtextedit" type="TextEdit" parent="DialogReadme/MarginContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 436.0
-margin_bottom = 266.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
+[node name="Readtextedit" type="TextEdit" parent="DialogReadme/MarginContainer"]
+margin_right = 988.0
+margin_bottom = 536.0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 text = "# A Game made with GODOT Game Engine
 yes a game made with godot"
-readonly = false
-highlight_current_line = false
-syntax_highlighting = false
-show_line_numbers = false
-highlight_all_occurrences = false
-override_selected_font_color = false
-context_menu_enabled = true
-smooth_scrolling = false
-v_scroll_speed = 80.0
-hiding_enabled = 0
-wrap_lines = false
-caret_block_mode = false
-caret_blink = false
-caret_blink_speed = 0.65
-caret_moving_by_right_click = true
 
-[node name="DialogLicense" type="WindowDialog" parent="." index="4"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 162.0
-margin_top = 70.0
-margin_right = 618.0
-margin_bottom = 356.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
+[node name="DialogLicense" type="WindowDialog" parent="."]
+editor/display_folded = true
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 1016.0
+margin_bottom = 564.0
 window_title = "Edit LICENSE"
-resizable = false
-_sections_unfolded = [ "Popup" ]
 
-[node name="MarginContainer" type="MarginContainer" parent="DialogLicense" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="MarginContainer" type="MarginContainer" parent="DialogLicense"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Lictextedit" type="TextEdit" parent="DialogLicense/MarginContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 436.0
-margin_bottom = 266.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
+[node name="Lictextedit" type="TextEdit" parent="DialogLicense/MarginContainer"]
+margin_right = 988.0
+margin_bottom = 536.0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 text = "Add your license text here.
 
 You can always replace this text with a license on this cool site
 https://choosealicense.com/"
-readonly = false
-highlight_current_line = false
-syntax_highlighting = false
-show_line_numbers = false
-highlight_all_occurrences = false
-override_selected_font_color = false
-context_menu_enabled = true
-smooth_scrolling = false
-v_scroll_speed = 80.0
-hiding_enabled = 0
-wrap_lines = false
-caret_block_mode = false
-caret_blink = false
-caret_blink_speed = 0.65
-caret_moving_by_right_click = true
-
 [connection signal="item_selected" from="MarginContainer/PanelContainer/HBoxContainer/FolderTree" to="." method="_on_FolderTree_item_selected"]
-
 [connection signal="nothing_selected" from="MarginContainer/PanelContainer/HBoxContainer/FolderTree" to="." method="_on_FolderTree_nothing_selected"]
-
-

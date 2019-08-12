@@ -1,5 +1,5 @@
 tool
-extends Panel
+extends AcceptDialog
 
 export(Texture) var folder_icon
 
@@ -130,7 +130,7 @@ func count_tree_items(treeitem):
 		while child != null:
 			# put code here
 			print(child.get_text(0))
-			++child_count
+			child_count += 1
 			child = child.get_next()
 	return child_count
 
@@ -187,5 +187,7 @@ func _on_cleartree_button_down():
 	root.set_text(0,"root")
 
 
+func display():
+	popup_centered_ratio(0.5)
 
 
