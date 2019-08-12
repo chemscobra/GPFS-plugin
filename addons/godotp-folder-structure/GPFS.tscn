@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://addons/godotp-folder-structure/GPFS.gd" type="Script" id=1]
 [ext_resource path="res://addons/godotp-folder-structure/file_type_git2.svg" type="Texture" id=2]
 [ext_resource path="res://addons/godotp-folder-structure/file_type_markdown.svg" type="Texture" id=3]
-[ext_resource path="res://addons/godotp-folder-structure/file_type_license.svg" type="Texture" id=4]
 
 [node name="GPFS" type="AcceptDialog"]
+visible = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -108,11 +108,10 @@ custom_colors/font_color = Color( 0.501266, 0.704082, 0.964844, 1 )
 text = "Clear Tree"
 
 [node name="HBoxContainer2" type="GridContainer" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer"]
-editor/display_folded = true
 margin_left = 188.0
 margin_top = 39.0
 margin_right = 461.0
-margin_bottom = 161.0
+margin_bottom = 147.0
 size_flags_horizontal = 6
 columns = 2
 
@@ -151,7 +150,7 @@ icon = ExtResource( 3 )
 margin_left = 13.0
 margin_top = 84.0
 margin_right = 121.0
-margin_bottom = 122.0
+margin_bottom = 108.0
 size_flags_horizontal = 4
 text = "Add LICENSE"
 
@@ -159,17 +158,14 @@ text = "Add LICENSE"
 margin_left = 139.0
 margin_top = 84.0
 margin_right = 273.0
-margin_bottom = 122.0
+margin_bottom = 108.0
 size_flags_horizontal = 5
 text = "Edit License"
-icon = ExtResource( 4 )
 
 [node name="Create" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer"]
-anchor_right = 1.0
-margin_left = 40.0
-margin_top = 176.0
-margin_right = -190.0
-margin_bottom = 196.0
+margin_top = 162.0
+margin_right = 650.0
+margin_bottom = 182.0
 size_flags_horizontal = 5
 text = "Create Structure"
 

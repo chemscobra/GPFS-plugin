@@ -1,7 +1,8 @@
 tool
 extends AcceptDialog
 
-export(Texture) var folder_icon
+onready var folder_icon = get_icon('Folder', 'EditorIcons')
+onready var edit_icon = get_icon('Edit', 'EditorIcons')
 
 #Controls
 onready var folder_tree = $MarginContainer/PanelContainer/HBoxContainer/FolderTree
@@ -26,6 +27,7 @@ var sel_item = null
 var root = null
 
 func _ready():
+	edit_license.icon = edit_icon
 	self.set_focus_mode(Control.FOCUS_ALL)
 	root = folder_tree.create_item()
 	root.set_text(0,"root")

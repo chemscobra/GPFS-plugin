@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon_folder.svg-b425550048c8b9d153accba479a9ba18.stex"
+path="res://.import/gpfs_window.png-349ca9a1f9403faf6839803a5b37589c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/godotp-folder-structure/icon_folder.svg"
-dest_files=[ "res://.import/icon_folder.svg-b425550048c8b9d153accba479a9ba18.stex" ]
+source_file="res://img/gpfs_window.png"
+dest_files=[ "res://.import/gpfs_window.png-349ca9a1f9403faf6839803a5b37589c.stex" ]
 
 [params]
 
