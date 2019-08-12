@@ -12,8 +12,8 @@ onready var readme_text = $DialogReadme/MarginContainer/Readtextedit
 onready var license_text = $DialogLicense/MarginContainer/Lictextedit
 
 #Buttons
-onready var add_folder= $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/AddFolder
-onready var del_folder= $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/DelFolder
+onready var add_folder = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/AddFolder
+onready var del_folder = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/DelFolder
 onready var clear_tree = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer/ClearTree
 onready var create_struc = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/Create
 onready var edit_git = $MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2/EditGitBtn
