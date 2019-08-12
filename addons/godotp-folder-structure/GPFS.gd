@@ -188,6 +188,5 @@ func _on_cleartree_button_down():
 
 
 func display():
-	popup_centered_ratio(0.5)
-
+	popup_centered_ratio(0.90)
 

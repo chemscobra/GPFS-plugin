@@ -66,22 +66,18 @@ size_flags_vertical = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer/Controls"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 50.0
-margin_top = 10.0
-margin_right = -50.0
-margin_bottom = -10.0
 size_flags_horizontal = 5
 custom_constants/separation = 15
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer"]
 editor/display_folded = true
-margin_right = 550.0
+margin_right = 650.0
 margin_bottom = 24.0
 size_flags_horizontal = 7
 alignment = 1
 
 [node name="FolderName" type="LineEdit" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer"]
-margin_right = 282.0
+margin_right = 382.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 150, 0 )
 size_flags_horizontal = 7
@@ -89,85 +85,91 @@ caret_blink = true
 caret_blink_speed = 0.5
 
 [node name="AddFolder" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer"]
-margin_left = 286.0
-margin_right = 367.0
+margin_left = 386.0
+margin_right = 467.0
 margin_bottom = 24.0
 size_flags_horizontal = 5
 custom_colors/font_color = Color( 0.0828857, 0.757812, 0.314892, 1 )
 text = "Add Folder"
 
 [node name="DelFolder" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer"]
-margin_left = 371.0
-margin_right = 470.0
+margin_left = 471.0
+margin_right = 570.0
 margin_bottom = 24.0
 size_flags_horizontal = 5
 custom_colors/font_color = Color( 0.949219, 0.196344, 0.096405, 1 )
 text = "Delete Folder"
 
 [node name="ClearTree" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer"]
-margin_left = 474.0
-margin_right = 550.0
+margin_left = 574.0
+margin_right = 650.0
 margin_bottom = 24.0
 custom_colors/font_color = Color( 0.501266, 0.704082, 0.964844, 1 )
 text = "Clear Tree"
 
 [node name="HBoxContainer2" type="GridContainer" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer"]
-margin_left = 207.0
+editor/display_folded = true
+margin_left = 188.0
 margin_top = 39.0
-margin_right = 342.0
-margin_bottom = 245.0
+margin_right = 461.0
+margin_bottom = 161.0
 size_flags_horizontal = 6
+columns = 2
 
 [node name="Addgit" type="CheckBox" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2"]
 margin_left = 11.0
 margin_right = 124.0
-margin_bottom = 24.0
+margin_bottom = 38.0
 size_flags_horizontal = 4
 text = "Add gitignore"
 
 [node name="EditGitBtn" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2"]
-margin_top = 28.0
-margin_right = 135.0
-margin_bottom = 66.0
+margin_left = 139.0
+margin_right = 273.0
+margin_bottom = 38.0
 size_flags_horizontal = 5
 text = "Edit .gitignore"
 icon = ExtResource( 2 )
 
 [node name="Addreadme" type="CheckBox" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2"]
-margin_top = 70.0
+margin_top = 42.0
 margin_right = 135.0
-margin_bottom = 94.0
+margin_bottom = 80.0
 size_flags_horizontal = 4
 text = "Add README.md"
 
 [node name="EditReadBtn" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2"]
-margin_top = 98.0
-margin_right = 135.0
-margin_bottom = 136.0
+margin_left = 139.0
+margin_top = 42.0
+margin_right = 273.0
+margin_bottom = 80.0
 size_flags_horizontal = 5
 text = "Edit Readme"
 icon = ExtResource( 3 )
 
 [node name="Addlicense" type="CheckBox" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2"]
 margin_left = 13.0
-margin_top = 140.0
+margin_top = 84.0
 margin_right = 121.0
-margin_bottom = 164.0
+margin_bottom = 122.0
 size_flags_horizontal = 4
 text = "Add LICENSE"
 
 [node name="EditlicenseBtn" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer/HBoxContainer2"]
-margin_top = 168.0
-margin_right = 135.0
-margin_bottom = 206.0
+margin_left = 139.0
+margin_top = 84.0
+margin_right = 273.0
+margin_bottom = 122.0
 size_flags_horizontal = 5
 text = "Edit License"
 icon = ExtResource( 4 )
 
 [node name="Create" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/Controls/VBoxContainer"]
-margin_top = 260.0
-margin_right = 550.0
-margin_bottom = 280.0
+anchor_right = 1.0
+margin_left = 40.0
+margin_top = 176.0
+margin_right = -190.0
+margin_bottom = 196.0
 size_flags_horizontal = 5
 text = "Create Structure"
 
